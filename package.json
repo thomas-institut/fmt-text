@@ -1,25 +1,26 @@
 {
-  "name": "fmt-text",
-  "version": "1.0.0",
+  "name": "@thomas-inst/fmt-text",
+  "version": "1.0.5",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
   "type": "module",
+  "main": "./dist/FmtText.js",
   "exports": {
-    "FmtText.js": "./dist/FmtText.js",
-    "FmtTextFactory.js" : "./dist/FmtTextFactory.js",
-    "FmtTextToken.js" : "./dist/FmtTextToken.js",
-    "FmtTextTokenFactory.js" : "./dist/FmtTextTokenFactory.js",
-    "FontSize.js": "./dist/FontSize.js",
-    "FontStyle.js": "./dist/FontStyle.js",
-    "FontWeight.js": "./dist/FontWeight.js",
-    "MarkType.js": "./dist/MarkType.js",
-    "ParagraphStyle.js": "./dist/ParagraphStyle.js",
-    "VerticalAlign.js": "./dist/VerticalAlign.js",
-    "FmtTextRenderer.js": "./dist/FmtTextRenderer.js",
-    "HtmlRenderer.js" : "./dist/HtmlRenderer.js"
+    "./FmtText": "./dist/FmtText.js",
+    "./FmtTextFactory" : "./dist/FmtTextFactory.js",
+    "./FmtTextToken" : "./dist/FmtTextToken.js",
+    "./FmtTextTokenFactory" : "./dist/FmtTextTokenFactory.js",
+    "./FontSize": "./dist/FontSize.js",
+    "./FontStyle": "./dist/FontStyle.js",
+    "./FontWeight": "./dist/FontWeight.js",
+    "./MarkType": "./dist/MarkType.js",
+    "./ParagraphStyle": "./dist/ParagraphStyle.js",
+    "./VerticalAlign": "./dist/VerticalAlign.js",
+    "./FmtTextRenderer": "./dist/FmtTextRenderer.js",
+    "./HtmlRenderer" : "./dist/HtmlRenderer.js"
   },
   "files": [
     "dist/",

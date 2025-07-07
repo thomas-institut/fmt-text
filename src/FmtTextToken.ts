@@ -217,6 +217,7 @@ export class FmtTextToken {
   }
 
   setGlue(width: any, stretch = 0, shrink = 0 ) {
+    this.type = FmtTextTokenType.GLUE;
     this.space = ''
     this.width = width
     this.stretch = stretch
