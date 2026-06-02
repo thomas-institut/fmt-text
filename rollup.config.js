@@ -7,25 +7,25 @@ import { readFileSync } from 'fs';
 const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
 
 export default {
-  input: [
-    'src/FmtText.ts',
-    'src/FmtTextFactory.ts',
-    'src/FmtTextToken.ts',
-    'src/FmtTextTokenFactory.ts',
-    'src/FontSize.ts',
-    'src/FontStyle.ts',
-    'src/FontWeight.ts',
-    'src/MarkType.ts',
-    'src/ParagraphStyle.ts',
-    'src/VerticalAlign.ts',
-    'src/FmtTextRenderer.ts',
-    'src/HtmlRenderer.ts'
+  input: 'src/index.ts',
+  output: [
+    {
+      dir: 'dist',
+      format: 'es',
+      entryFileNames: '[name].js',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      sourcemap: true
+    },
+    {
+      dir: 'dist',
+      format: 'cjs',
+      entryFileNames: '[name].cjs',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      sourcemap: true
+    }
   ],
-  output: {
-    dir: 'dist',
-    format: 'es',
-    sourcemap: true
-  },
   plugins: [
     nodeResolve(), // Locates modules using Node.js resolution algorithm
     commonjs(),    // Converts CommonJS modules (like some node_modules) to ES6
@@ -33,6 +33,7 @@ export default {
       tsconfig: './tsconfig.json', // Path to your tsconfig.json
       declaration: true, // Ensure declarations are generated
       declarationDir: 'dist', // Output directory for .d.ts files
+      rootDir: 'src'
     }),
     babel({
       babelHelpers: 'bundled', // Or 'runtime' if you use @babel/runtime
@@ -40,8 +41,8 @@ export default {
       presets: [
         ['@babel/preset-env', {
           targets: {
-            node: '18', // Target Node.js 18 for Node.js build
-            esmodules: true, // Or specific browsers for browser build
+            node: '24', // Target Node.js 24 as requested
+            browsers: '> 0.25%, not dead', // Support browser build
           },
           modules: false, // Important for Rollup to handle ES modules
         }],

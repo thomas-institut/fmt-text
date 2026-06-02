@@ -1,26 +1,77 @@
 {
   "name": "@thomas-inst/fmt-text",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf dist",
     "build": "rollup -c"
   },
   "type": "module",
-  "main": "./dist/FmtText.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "./FmtText": "./dist/FmtText.js",
-    "./FmtTextFactory" : "./dist/FmtTextFactory.js",
-    "./FmtTextToken" : "./dist/FmtTextToken.js",
-    "./FmtTextTokenFactory" : "./dist/FmtTextTokenFactory.js",
-    "./FontSize": "./dist/FontSize.js",
-    "./FontStyle": "./dist/FontStyle.js",
-    "./FontWeight": "./dist/FontWeight.js",
-    "./MarkType": "./dist/MarkType.js",
-    "./ParagraphStyle": "./dist/ParagraphStyle.js",
-    "./VerticalAlign": "./dist/VerticalAlign.js",
-    "./FmtTextRenderer": "./dist/FmtTextRenderer.js",
-    "./HtmlRenderer" : "./dist/HtmlRenderer.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./FmtText": {
+      "import": "./dist/FmtText.js",
+      "require": "./dist/FmtText.cjs",
+      "types": "./dist/FmtText.d.ts"
+    },
+    "./FmtTextTokenType": {
+      "import": "./dist/FmtTextTokenType.js",
+      "require": "./dist/FmtTextTokenType.cjs",
+      "types": "./dist/FmtTextTokenType.d.ts"
+    },
+    "./FontSize": {
+      "import": "./dist/FontSize.js",
+      "require": "./dist/FontSize.cjs",
+      "types": "./dist/FontSize.d.ts"
+    },
+    "./FontStyle": {
+      "import": "./dist/FontStyle.js",
+      "require": "./dist/FontStyle.cjs",
+      "types": "./dist/FontStyle.d.ts"
+    },
+    "./FontWeight": {
+      "import": "./dist/FontWeight.js",
+      "require": "./dist/FontWeight.cjs",
+      "types": "./dist/FontWeight.d.ts"
+    },
+    "./MarkType": {
+      "import": "./dist/MarkType.js",
+      "require": "./dist/MarkType.cjs",
+      "types": "./dist/MarkType.d.ts"
+    },
+    "./ParagraphStyle": {
+      "import": "./dist/ParagraphStyle.js",
+      "require": "./dist/ParagraphStyle.cjs",
+      "types": "./dist/ParagraphStyle.d.ts"
+    },
+    "./VerticalAlign": {
+      "import": "./dist/VerticalAlign.js",
+      "require": "./dist/VerticalAlign.cjs",
+      "types": "./dist/VerticalAlign.d.ts"
+    },
+    "./FmtTextRenderer": {
+      "import": "./dist/Renderer/FmtTextRenderer.js",
+      "require": "./dist/Renderer/FmtTextRenderer.cjs",
+      "types": "./dist/Renderer/FmtTextRenderer.d.ts"
+    },
+    "./HtmlRenderer": {
+      "import": "./dist/Renderer/HtmlRenderer.js",
+      "require": "./dist/Renderer/HtmlRenderer.cjs",
+      "types": "./dist/Renderer/HtmlRenderer.d.ts"
+    },
+    "./AsyncFmtTextRenderer": {
+      "import": "./dist/Renderer/AsyncFmtTextRenderer.js",
+      "require": "./dist/Renderer/AsyncFmtTextRenderer.cjs",
+      "types": "./dist/Renderer/AsyncFmtTextRenderer.d.ts"
+    }
   },
   "files": [
     "dist/",
@@ -48,7 +99,7 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.4",
     "@types/node": "^24.0.10",
-    "rollup": "^4.44.2",
+    "rollup": "4.59.0",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3"
   }

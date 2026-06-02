@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2021 Universität zu Köln
+ *  Copyright (C) 2022 Universität zu Köln
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,24 +16,12 @@
  *
  */
 
-import { FmtText } from './FmtText'
-import { FmtTextToken } from './FmtTextToken'
+import {FmtText, getPlainText} from '../FmtText.js';
 
-/**
- * Base class for FmtText renderers
- *
- */
-export class FmtTextRenderer {
+export class AsyncFmtTextRenderer {
 
-  /**
-   * The render method can return anything.
-   * The default is to return the plain text version of the text
-   * @param {FmtTextToken[]} fmtText
-   * @param {string}lang
-   * @return {*}
-   */
-  render(fmtText: FmtTextToken[], lang: string = ''): any {
-    return FmtText.getPlainText(fmtText)
+  render(fmtText: FmtText, lang = ''): Promise<any> {
+    return Promise.resolve(getPlainText(fmtText));
   }
 
 }
