@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
     "prebuild": "rm -rf dist",
     "build": "rollup -c"
   },
@@ -101,6 +101,7 @@
     "@types/node": "^24.0.10",
     "rollup": "4.59.0",
     "tslib": "^2.8.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.8"
   }
 }
