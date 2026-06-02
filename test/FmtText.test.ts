@@ -9,7 +9,7 @@ import {
   toCompactFmtText,
   getNormalizedFmtText,
   getCleanFmtText
-} from '../src/FmtText';
+} from '../src';
 
 describe('FmtText', () => {
   describe('fromString', () => {
