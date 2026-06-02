@@ -1,6 +1,6 @@
 {
   "name": "@thomas-inst/fmt-text",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "scripts": {
     "test": "vitest run",
@@ -90,7 +90,6 @@
   },
   "homepage": "https://github.com/thomas-institut/fmt-text#readme",
   "dependencies": {
-    "@thomas-inst/optionschecker": "^1.1.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
